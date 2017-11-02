@@ -7,18 +7,16 @@ import EventsView from './views/EventsView';
 import EventDetailView from './views/EventDetailView';
 import BookTicket from './views/BookTicket';
 
-const eventsData = new EventsData();
-
 export default class App extends React.Component {
   render() {
     return <SimpleApp />;
   }
 }
-
 export const SimpleApp = StackNavigator({
   HomeView: { screen: HomeView },
   EventsView: { screen: EventsView },
-  BookTicket: { screen: BookTicket}
+  EventDetailView: { screen: EventDetailView },
+  BookTicket: { screen: BookTicket }
 });
 
 const styles = StyleSheet.create({
