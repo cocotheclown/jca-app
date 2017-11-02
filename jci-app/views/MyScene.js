@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavigatorIOS, View, TouchableHighlight, Text } from 'react-native';
 
+
 export default class MyScene extends Component {
     static propTypes = {
-      title: PropTypes.string.isRequired,
       navigator: PropTypes.object.isRequired,
     }
   
@@ -17,6 +17,7 @@ export default class MyScene extends Component {
     render() {
       return (
         <View>
+        
           <Text>Current Scene: { this.props.title }</Text>
           <Text>ABD</Text>
           <Text>Curr</Text>
