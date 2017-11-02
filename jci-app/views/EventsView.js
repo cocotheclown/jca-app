@@ -28,7 +28,13 @@ export default class EventsView extends Component {
   }
 
   _renderItem({item}) {
-    return <ListItem key={item.key} title={item.name} />;
+    return (
+      <ListItem
+        key={item.key}
+        title={item.name}
+        onPress={navigate('EventDetailView')}
+      />
+    );
   }
 
   render() {
@@ -38,12 +44,14 @@ export default class EventsView extends Component {
       return (
         <View>
 
+
           <Text>Event List</Text>
           <Button
           onPress={() => navigate('EventDetailView')}
           title="Events"
 
         />
+
         </View>
       )
     } else {
@@ -51,8 +59,14 @@ export default class EventsView extends Component {
         <List>
           <FlatList
             data={this.state.events}
-            renderItem={this._renderItem}
-            />
+            renderItem={({item}) =>
+              <ListItem
+                key={item.key}
+                title={item.name}
+                onPress={() => navigate('EventDetailView', {key: item.key})}
+              />
+            }
+          />
         </List>
       );
     }
