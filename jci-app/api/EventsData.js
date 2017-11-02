@@ -9,8 +9,9 @@ export default class EventsData {
     }
 
     async refresh() {
-        let response = await fetch(this.url);
-        this.events = response.json();
+        let response = await fetch(this.url),
+            body = await response.json();
+        this.events = body.data;
     }
 
     _getEventById(id) {
@@ -30,14 +31,25 @@ export default class EventsData {
     }
 
     _formatEvent(event) {
-        let location = event.place.location;
+        let locData = event.place && event.place.location?event.place.location:{},
+            location = [];
+        
+        if (event.place && event.place.name) {
+            location.push(event.place.name);
+        }
+
+        ['street', 'city', 'zip'].forEach((prop) => {
+            if (locData[prop]) {
+                 location.push(locData[prop]);
+            }
+        });
 
         return {
             id: event.id,
             name: event.name,
             description: event.description,
             start_time: moment(event.start_time),
-            location: `${event.place}\n${location.street}\n${location.city}\n${location.zip}`
+            location: location.join('\n')
         };
     }
 
