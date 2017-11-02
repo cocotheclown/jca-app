@@ -5,7 +5,7 @@ export default class EventsData {
     events = null
 
     constructor() {
-        refresh();
+        this.refresh();
     }
 
     async refresh() {
