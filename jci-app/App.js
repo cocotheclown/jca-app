@@ -19,9 +19,6 @@ export default class App extends React.Component {
     return <SimpleApp />;
   }
 }
-
-
-
 export const SimpleApp = StackNavigator({
   EventsView: { screen: EventsView },
   EventDetailView: { screen: EventDetailView },

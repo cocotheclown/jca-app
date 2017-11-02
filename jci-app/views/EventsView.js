@@ -11,7 +11,7 @@ export default class EventsView extends Component {
       const { navigate } = this.props.navigation;
       return (
         <View>
-          <Text>I am events view</Text>
+          <Text>Event List</Text>
           <Button
           onPress={() => navigate('EventDetailView')}
           title="Events"

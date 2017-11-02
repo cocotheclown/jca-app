@@ -11,10 +11,10 @@ export default class EventDetailView extends Component {
         const { navigate } = this.props.navigation;
         return (
           <View>
-            <Text>Book Ticket</Text>
+            <Text>Event Detail</Text>
          <Button
           onPress={() => navigate('BookTicket')}
-          title="Events"
+          title="Book Ticket"
         />
           </View>
         );
