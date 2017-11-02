@@ -6,18 +6,7 @@ import BookTicket from './BookTicket';
 import eventsData from '../api/EventsData';
 export default class EventDetailView extends Component {
   static navigationOptions = {
-<<<<<<< HEAD
-        title: 'Event Detail',
-      };
-      render() {
-        const { navigate } = this.props.navigation;
-        return (
-          <View>
-            <Text>Event Detail</Text>
-         <Button
-          onPress={() => navigate('BookTicket')}
-          title="Book Ticket"
-=======
+
     title: 'Event Detail',
   };
   
@@ -48,7 +37,7 @@ export default class EventDetailView extends Component {
         <Button
         onPress={() => navigate('BookTicket')}
         title="Book Ticket"
->>>>>>> a54566950438251a5dba3ab113f61b3300d1f0e8
+
         />
         </View>
       );
