@@ -63,7 +63,7 @@ export default class EventsView extends Component {
               <ListItem
                 key={item.key}
                 title={item.name}
-                onPress={() => navigate('EventDetailView', {key: item.key})}
+                onPress={() => navigate('EventDetailView', {event: item})}
               />
             }
           />

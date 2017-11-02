@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, AppRegistry, Text, View, Button } from 'react-native';
+import { StyleSheet, AppRegistry, ScrollView, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import BookTicket from './BookTicket';
 
 import eventsData from '../api/EventsData';
 export default class EventDetailView extends Component {
-  static navigationOptions = {
-    title: 'Event Detail',
-  };
+  static navigationOptions = ({navigation}) => ({
+    title: navigation.state.params.event.name
+  });
   
   constructor() {
     super()
@@ -16,28 +16,26 @@ export default class EventDetailView extends Component {
     };
   }
   
-  async componentDidMount() {
-    let event = await eventsData.getEvent(this.props.navigation.state.params.key);
-    this.setState({event});
-  }
+  // async componentDidMount() {
+    // let event = await eventsData.getEvent(this.props.navigation.state.params.key);
+    // this.setState({event});
+  // }
   
   render() {
     const { navigate } = this.props.navigation,
-      event = this.state.event;
-    
+      event = this.props.navigation.state.params.event;
+
     if (event === null) {
       return (<View></View>);
     } else {
-      console.log(event)
       return (
-        <View>
-        <Text>{event.name}</Text>
+        <ScrollView>
         <Text>{event.description}</Text>
         <Button
-        onPress={() => navigate('BookTicket')}
+        onPress={() => navigate('BookTicket', {event: event})}
         title="Book Ticket"
         />
-        </View>
+        </ScrollView>
       );
     }
   }
