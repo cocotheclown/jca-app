@@ -45,6 +45,7 @@ class EventsData {
         });
 
         return {
+            key: event.id,
             id: event.id,
             name: event.name,
             description: event.description,
