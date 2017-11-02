@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export default class EventsData {
+class EventsData {
     url = 'https://graph.facebook.com/v2.7/169621830258/events/attending/?fields=id,name,description,place,timezone,start_time,cover&access_token=1731188350544201%7CUc9s88m57TTdl07VcACPD4Boluo&since=01012017';
     events = null
 
@@ -79,3 +79,5 @@ export default class EventsData {
         return this._formatEvent(event);
     }
 }
+
+export default new EventsData();

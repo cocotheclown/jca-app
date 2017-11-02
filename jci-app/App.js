@@ -12,8 +12,6 @@ import EventDetailView from './views/EventDetailView';
 import BookTicket from './views/BookTicket';
 import MyScene from './views/MyScene';
 
-const eventsData = new EventsData();
-
 export default class App extends React.Component {
   render() {
     return <SimpleApp />;
