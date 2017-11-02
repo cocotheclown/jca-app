@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, AppRegistry, Text, View, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
 
 export default class EventDetailView extends Component {
-    render() {
-      return (
-        <View>
-          <Text>I am event detail view</Text>
-        </View>
-      )
-    }
+  static navigationOptions = {
+        title: 'Events',
+      };
+      render() {
+        return (
+          <View>
+            <Text>View Events</Text>
+          </View>
+        );
+      }
 }
